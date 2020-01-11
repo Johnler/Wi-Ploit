@@ -1,3 +1,4 @@
+![alt text](https://github.com/Johnler/Wi-Ploit/blob/master/WifiExploit.jpg)
 # Wi-Ploit 1.0.1
 Wi-Ploit is a library of Wi-Fi exploitation tools.  
 Supports latest other tools e.g: Aircrack-ng etc.
