@@ -34,7 +34,7 @@ PASSLOG_PATH="/root/pwlog"
 WORK_DIR='pwd'
 MANA_DIR=$(pwd)/hostapd-mana/hostapd
 DEAUTHTIME="99999999999"
-version=1.0.1
+version=2.0.0
 IP=192.168.1.1
 RANG_IP=$(echo $IP | cut -d "." -f 1,2,3)
 
@@ -363,6 +363,14 @@ echo -ne "aircrack-ng....."
 	fi
 	sleep 0.025
 	
+	echo -ne "hostapd-mana...."
+	if [ ! -d "./hostapd-mana" ]; then
+		echo -e "\e[1;31mNot installed"$transparent""
+		exit=1
+	else
+		echo -e "\e[1;32mOK!"$transparent""
+	fi
+	sleep 0.025
 	echo -ne "iwconfig........"
 	if ! hash iwconfig 2>/dev/null; then
 		echo -e "\e[1;31mNot installed"$transparent""
@@ -415,24 +423,24 @@ echo -ne "aircrack-ng....."
 		exit=1
 	else
 		echo -e "\e[1;32mOK!"$transparent""
-	fi
-	sleep 0.025
+	# fi
+	# sleep 0.025
 	
-	echo -ne "pyrit..........."
-	if ! hash pyrit 2>/dev/null; then
-		echo -e "\e[1;31mNot installed"$transparent""
-		exit=1
-	else
-		echo -e "\e[1;32mOK!"$transparent""
-	fi
-	sleep 0.025
+	# echo -ne "pyrit..........."
+	# if ! hash pyrit 2>/dev/null; then
+	# 	echo -e "\e[1;31mNot installed"$transparent""
+	# 	exit=1
+	# else
+	# 	echo -e "\e[1;32mOK!"$transparent""
+	# fi
+	# sleep 0.025
 	
-	echo -ne "python.........."
-	if ! hash python 2>/dev/null; then
-		echo -e "\e[1;31mNot installed"$transparent""
-		exit=1
-	else
-		echo -e "\e[1;32mOK!"$transparent""
+	# echo -ne "python.........."
+	# if ! hash python 2>/dev/null; then
+	# 	echo -e "\e[1;31mNot installed"$transparent""
+	# 	exit=1
+	# else
+	# 	echo -e "\e[1;32mOK!"$transparent""
 	fi
 	sleep 0.025
 	
@@ -1173,16 +1181,16 @@ function deauthforce {
 			echo -e ""$red"["$yellow"i"$red"]"$transparent" $header_deauthforce"
 			echo "                                       "
 			echo -e "      "$red"["$yellow"1"$red"]"$transparent" $deauthforce_option_1"
-			echo -e "      "$red"["$yellow"2"$red"]"$transparent" pyrit"
-			echo -e "      "$red"["$yellow"3"$red"]"$transparent" $general_back"
+			# echo -e "      "$red"["$yellow"2"$red"]"$transparent" pyrit"
+			echo -e "      "$red"["$yellow"2"$red"]"$transparent" $general_back"
 			echo "                                       "
 			echo -n -e ""$red"["$blue$USER$yellow"@"$white"wiploit"$red"]-["$yellow"~"$red"]"$transparent""
 			read yn
 			echo ""
 			case $yn in
 				1 ) handshakemode="normal"; askclientsel; break ;;
-				2 ) handshakemode="hard"; askclientsel; break ;;
-				3 ) askauth; break ;;
+				# 2 ) handshakemode="hard"; askclientsel; break ;;
+				2 ) askauth; break ;;
 				* ) echo "
 		$general_case_error"; conditional_clear ;;
 			esac

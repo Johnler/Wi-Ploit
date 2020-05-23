@@ -1,8 +1,15 @@
 ![alt text](https://github.com/Johnler/Wi-Ploit/blob/master/WifiExploit.jpg)
 # Wi-Ploit 1.0.1
 Wi-Ploit is a library of Wi-Fi exploitation tools.  
-Supports latest other tools e.g: Aircrack-ng etc.
 * Base code script of deltaflux Fluxion old version.
+* For old Kali/ParrotOs version.
+
+# (New Update)Wi-Ploit 2.0.0
+Wi-Ploit is a library of Wi-Fi exploitation tools.
+* Removes Python2 and dependecies.
+** Pryit (disabled, waiting for python3 release).
+* Updated Scripts.
+* Tested on Kali (2020-05-12)
 
 # Attacks:
 1. Rogue Access Point (hostapd).  

@@ -9,7 +9,7 @@ fi
 ################################
 
 #Config
-version=1.0.1
+version=2.0.0
 #Colors
 red='\e[1;31m'
 blue='\e[1;34m'
@@ -278,7 +278,7 @@ else
 fi
 sleep 0.025
 ##############################
-echo -ne "Php-cgi........"
+echo -ne "Php-cgi........."
 	if ! hash php-cgi 2>/dev/null; then
 		echo -e "\e[1;31mInstalling ..."$transparent""
 			xterm $HOLD -title "Installing php-cgi" $TOPLEFTBIG -bg "#FFFFFF" -fg "#000000" -e apt-get --yes install php-cgi
@@ -288,24 +288,24 @@ echo -ne "Php-cgi........"
 	sleep 0.025
 ##############################
 
-	echo -ne "Pyrit..........."
-	if ! hash pyrit 2>/dev/null; then
-		echo -e "\e[1;31mInstalling ..."$transparent""
-		xterm $HOLD -title "Installing Pyrit" $TOPLEFTBIG -bg "#FFFFFF" -fg "#000000" -e apt-get --yes install pyrit
-	else
-		echo -e "\e[1;32mOK!"$transparent
-  fi
-	sleep 0.025
-##############################
+# 	echo -ne "Pyrit..........."
+# 	if ! hash pyrit 2>/dev/null; then
+# 		echo -e "\e[1;31mInstalling ..."$transparent""
+# 		xterm $HOLD -title "Installing Pyrit" $TOPLEFTBIG -bg "#FFFFFF" -fg "#000000" -e apt-get --yes install pyrit
+# 	else
+# 		echo -e "\e[1;32mOK!"$transparent
+#   fi
+# 	sleep 0.025
+# ##############################
 
-echo -ne "Python.........."
-	if ! hash python 2>/dev/null; then
-		echo -e "\e[1;31mInstalling ..."$transparent""
-			xterm $HOLD -title "Installing Python" $TOPLEFTBIG -bg "#FFFFFF" -fg "#000000" -e apt-get --yes install python
-	else
-		echo -e "\e[1;32mOK!"$transparent
-  fi
-	sleep 0.025
+# echo -ne "Python.........."
+# 	if ! hash python 2>/dev/null; then
+# 		echo -e "\e[1;31mInstalling ..."$transparent""
+# 			xterm $HOLD -title "Installing Python" $TOPLEFTBIG -bg "#FFFFFF" -fg "#000000" -e apt-get --yes install python
+# 	else
+# 		echo -e "\e[1;32mOK!"$transparent
+#   fi
+# 	sleep 0.025
 
 ##############################
 	echo -ne "Reaver.........."
@@ -348,7 +348,7 @@ echo -ne "Xterm..........."
   fi
 	sleep 0.025
 ##############################
-echo -ne "strings.........."
+echo -ne "strings........."
 if ! hash strings 2>/dev/null; then
         echo -e "\e[1;31mInstalling ..."$transparent""
         xterm $HOLD -title "Installing binutils" $TOPLEFTBIG -bg "#FFFFFF" -fg "#000000" -e apt-get --yes install binutils
@@ -357,7 +357,7 @@ else
 fi
 sleep 0.025
 #############################
-echo -ne "fuser............"
+echo -ne "fuser..........."
 if ! hash fuser 2>/dev/null; then
         echo -e "\e[1;31mInstalling ..."$transparent""
         xterm $HOLD -title "Installing psmisc" $TOPLEFTBIG -bg "#FFFFFF" -fg "#000000" -e apt-get --yes install psmisc
@@ -366,7 +366,7 @@ else
 fi
 sleep 0.025
 ##############################
-	echo -ne "Git..........."
+	echo -ne "Git............."
 	if ! hash git 2>/dev/null; then
 		echo -e "\e[1;31mInstalling ..."$transparent""
 		xterm $HOLD -title "Installing git" $TOPLEFTBIG -bg "#FFFFFF" -fg "#000000" -e apt-get -y install git
@@ -385,8 +385,8 @@ sleep 0.025
 sleep 0.025
 
 ##############################
-	echo -ne "Hostapd-mana..........."
-	if ! hash hostapd-mana 2>/dev/null; then
+	echo -ne "Hostapd-mana...."
+	if [ ! -d "./hostapd-mana" ]; then
 		echo -e "\e[1;31mInstalling ..."$transparent""
 		xterm $HOLD -title "Installing Hostapd-mana" $TOPLEFTBIG -bg "#FFFFFF" -fg "#000000" -e apt-get -y install build-essential pkg-config libnl-genl-3-dev libssl-dev && git clone https://github.com/sensepost/hostapd-mana && cd hostapd-mana && make -C hostapd
 	else
